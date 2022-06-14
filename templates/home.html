@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProGro</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href={{url_for('static',filename='home.css' )}}>
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .green {
+            color: rgba(2, 199, 35, 0.932);
+            font-family: "Algerian";
+            font-size: 10vh;
+        }
+
+        header.hero .container .top-left {
+            word-spacing: normal;
+            font-family: 'Quicksand';
+            font-size: 10vh;
+            position: relative;
+            text-align: center;
+            color: rgb(240, 240, 240);
+            position: absolute;
+            top: 20vh;
+            left: 12vw;
+        }
+
+        .develop img {
+            height: 230px;
+            margin-left: 40%;
+
+        }
+    </style>
+    <link rel="icon" href="static\images\newprogro.jpeg" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <a id="button"></a>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-bar-chart">
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" />
+                </svg>
+            </div>
+
+            <div class="site-content">
+                <nav>
+                    <div class="container nav-wrapper">
+                        <div class="brand">
+                            <img src="./static/images/progro1.png">
+                        </div>
+
+                        <ul class="nav-list">
+                            <li class="active">
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color:black">Features</a>
+                                <ul class="dropdown-list">
+                                    <li><a href="/crop/">Crop Prediction</a></li>
+                                    <li><a href="/fertilizer/">Fertilizers</a></li>
+                                    <li><a href="/agrinews/">News Update</a></li>
+                                    <li><a href="/agrihub/">Agri-Hubs</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+
+
+                <header class="hero flex items-center">
+                    <div class="container">
+                        <div class="image">
+                            <img src="./static/images/1.png" class="img"
+                                style="max-height: 100vh; width: 100vw; background-size:100% 100%"
+                                alt="children in farm">
+                            <h1>
+                                <div class="top-left">Adding<br>
+                                    <div class="green">Green</div>to your Life
+                                </div>
+                            </h1>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="top-products">
+                    <div class="container">
+                        <h1 class="section-heading" style="font-size: xx-large"> Get Well Known About Your Farming
+                            Strategy!</h1>
+                        <div class="slider">
+                            <button class="slider-btn prev-btn"><img src="./icons/pre.svg" alt=""></button>
+                            <button class="slider-btn next-btn"><img src="./icons/next.svg" alt=""></button>
+                            <div class="food-slider">
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        <img src="./static/images/croplogo1.jpg">
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center"><a href="/crop/"
+                                                style="text-decoration: none; color: black;">Crop Prediction</a></h2>
+                                    </div>
+                                </div>
+
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        <img src="./static/images/fertilizerlogo.jpg" alt="">
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center"><a href="/fertlizer/"
+                                                style="text-decoration: none; color: black;">Fertilizer's Prediction</a>
+                                        </h2>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        <img src="./static/images/ann.png" alt="">
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center"><a href="/agrinews/"
+                                                style="text-decoration: none; color: black;">News Update</a></h2>
+                                    </div>
+                                </div>
+                                <div class="food-card magic-shadow-sm">
+                                    <div class="product-image flex items-center justify-center">
+                                        <img src="./static/images/agrihublogo.jpg" alt="">
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center"><a href="/agrihub/"
+                                                style="text-decoration: none; color: black;">Agri-Hub</a></h2>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <section class="about-meal">
+                    <div class="container">
+                        <h1 class="section-heading" style="font-size: xx-large">About Us</h1>
+                        <div class="about-meal-wrap flex">
+                            <div class="flex-1" style="margin-left: -8vw; margin-right: 8vw;">
+                                <video autoplay loop muted poster="http" class="img" alt="cinematic video of farm">
+                                    <source src="./static/images/heropage.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="flex-1" style="margin-top: 3vw;">
+                                <h2> IMPROVING AGRICULTURE, IMPROVING LIVES, CULTIVATING CROPS TO MAKE FARMERS INCREASE
+                                    PROFIT.</h2>
+                                <p>We use state-of-the-art machine learning and deep learning technologies to help you
+                                    guide through the entire farming process. Make informed decisions to understand the
+                                    demographics of your area, understand the factors that affect your crop and keep
+                                    them healthy for a super awesome successful yield.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="big-deal">
+                    <div class="container">
+                        <h1 class="section-heading text-pure" style="font-size: xx-large;">Meet our Team</h1>
+                        <div class="container">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="position1">
+                                            <div class="our-team">
+
+                                                <div class="picture">
+                                                    <img class="img-fluid" src="./static/images/Athang.png">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="name">Athang Bhandarkar</h3>
+                                                    <h4 class="title">Full Stack Developer</h4>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="https://www.facebook.com/athang.bhandarkar"
+                                                            class="fa fa-facebook" aria-hidden="true"></a></li>
+                                                    <li><a href="https://twitter.com/AthangBhandark9"
+                                                            class="fa fa-twitter" aria-hidden="true"></a></li>
+                                                    <li><a href="https://www.instagram.com/_athang__/"
+                                                            class="fa fa-instagram" aria-hidden="true"></a></li>
+                                                    <li><a href="https://www.linkedin.com/in/athang-bhandarkar-0048761a9/"
+                                                            class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="position2">
+                                            <div class="our-team">
+                                                <div class="picture">
+                                                    <img class="img-fluid" src="./static/images/Siddhi.png">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="name">Siddhi Malave</h3>
+                                                    <h4 class="title">Full Stack Developer</h4>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="https://www.facebook.com/siddhi.malave"
+                                                            class="fa fa-facebook" aria-hidden="true"></a></li>
+                                                    <li><a href="https://twitter.com/57_a3" class="fa fa-twitter"
+                                                            aria-hidden="true"></a></li>
+                                                    <li><a href="https://www.instagram.com/__siddhi___16/"
+                                                            class="fa fa-instagram" aria-hidden="true"></a></li>
+                                                    <li><a href="https://www.linkedin.com/in/siddhi-malave-2333ab217/"
+                                                            class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="position3">
+                                            <div class="first">
+                                                <div class="our-team">
+                                                    <div class="picture">
+
+                                                        <img class="img-fluid" src="./static/images/bhushan1.png">
+                                                    </div>
+                                                    <div class="team-content">
+                                                        <h3 class="name">Bhushan Bhande</h3>
+                                                        <h4 class="title">Web Developer</h4>
+                                                    </div>
+                                                    <ul class="social">
+                                                        <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                                class="fa fa-facebook" aria-hidden="true"></a></li>
+                                                        <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                                class="fa fa-twitter" aria-hidden="true"></a></li>
+                                                        <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                                class="fa fa-instagram" aria-hidden="true"></a>
+                                                        </li>
+                                                        <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                                class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                        <div class="position4">
+                                            <div class="our-team">
+                                                <div class="picture">
+                                                    <img class="img-fluid" src="./static/images/ashu2.png">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="name">Ashutosh Ishi</h3>
+                                                    <h4 class="title">Marketing Head</h4>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                            class="fa fa-facebook" aria-hidden="true"></a></li>
+                                                    <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                            class="fa fa-twitter" aria-hidden="true"></a></li>
+                                                    <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                            class="fa fa-instagram" aria-hidden="true"></a></li>
+                                                    <li><a href="https://codepen.io/collection/XdWJOQ/"
+                                                            class="fa fa-linkedin" aria-hidden="true"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footerimg">
+                                <h4>PROGRO</h4>
+                                <img src="./static/images/progro2.png">
+                            </div>
+
+                            <div class="footer-col" style="margin-left: -5vw;">
+                                <h4>QUICK LINKS</h4>
+                                <ul>
+                                    <li><a href="/">HOME</a></li>
+                                    <li><a href="/crop/">CROP PREDICTION</a></li>
+
+                                    <li><a href="/fertilizer/">FERTILIZERS</a></li>
+
+                                    <li><a href="/agrihub/">AGRI-HUBS</a></li>
+
+                                    <li><a href="/agrinews/">NEWS UPDATE</a></li>
+
+                                </ul>
+                            </div>
+
+                            <div class="footer-col">
+                                <h4>CONNECT</h4>
+                                <div class="social-links">
+                                    <a href="https://www.facebook.com/ProGro-106936068720158"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.instagram.com/progro04/"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src={{url_for('static',filename='app.js' )}}></script>
+</body>
+
+</html>

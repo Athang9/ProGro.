@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*navbar */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --main: #40d633;
+  --dark: #232323;
+  --min: #2f413d;
+  --sam: #fff;
+  --smoke: rgba(211, 209, 209, 0.5);
+  --dark-gray: rgb(254, 253, 253);
+  --secondary: #000000;
+}
+
+.container {
+  width: 1152px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.nav {
+  color: var(--smoke);
+}
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 60px;
+  margin-right: 10px;
+  margin-left: -20px;
+}
+
+.nav-wrapper ul.nav-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.nav-wrapper ul.nav-list li {
+  margin-left: 30px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.nav-wrapper ul.nav-list li a {
+  font-family: "Copperplate Gothic Light";
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.5s ease-in-out;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-wrapper ul.nav-list li a:hover,
+.nav-wrapper ul.nav-list li.active a {
+  padding-left: 8px;
+  color: var(--main);
+}
+
+main section.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 160px;
+}
+
+nav ul.dropdown-list {
+  list-style-type: none;
+  display: block;
+  border-radius: 3px;
+  background: var(--smoke);
+  padding: 6px 16px;
+  position: absolute;
+  width: max-content;
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  line-height: 300%;
+}
+
+.nav-wrapper ul.dropdown-list li {
+  margin-left: 0;
+  padding: 5px 0;
+}
+
+.nav-wrapper ul.dropdown-list li a {
+  color: var(--min);
+}
+
+.nav-wrapper ul.nav-list li:hover .dropdown-list {
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 30%;
+  animation: moveUp 0.5s ease-in-out forwards;
+}
+/*navbar */
+.bg-img {
+  background-color: antiquewhite;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+.p {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  margin: 20px auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+  padding: 3vh;
+  border-radius: 1vh;
+}
+
+.p .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 25px;
+  color: rgba(41, 196, 41, 0.932);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  width: 59.3vh;
+  min-height: 0.3vh;
+}
+
+.p .form {
+  width: 100%;
+}
+
+.p .form .inputfield {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.p .form .inputfield label {
+  width: 200px;
+  color: #000;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.p .form .inputfield .input,
+.p .form .inputfield .textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.p .form .inputfield .textarea {
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+.p .form .inputfield .custom_select {
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.p .form .inputfield .custom_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.p .form .inputfield .custom_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #d5dbd9;
+  border-radius: 3px;
+}
+
+.p .form .inputfield .input:focus,
+.p .form .inputfield .textarea:focus,
+.p .form .inputfield .custom_select select:focus {
+  border: 1px solid rgb(23, 148, 23);
+}
+
+.p .form .inputfield p {
+  font-size: 14px;
+  color: #757575;
+}
+.p .form .inputfield .check {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.p .form .inputfield .check input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.p .form .inputfield .check .checkmark {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgb(23, 148, 23);
+  display: block;
+  position: relative;
+}
+.p .form .inputfield .check .checkmark:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 2px;
+  border: 2px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+  display: none;
+}
+.p .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark {
+  background: rgb(23, 148, 23);
+}
+
+.p .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before {
+  display: block;
+}
+
+.p .form .inputfield .btn {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: rgba(41, 196, 41, 0.932);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.p .form .inputfield .btn:hover {
+  background: rgba(57, 223, 57, 0.932);
+}
+
+.p .form .inputfield:last-child {
+  margin-bottom: 0;
+}

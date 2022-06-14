@@ -1,0 +1,84 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+		crossorigin="anonymous" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+	<title>News App</title>
+	<link rel="stylesheet" href={{url_for('static',filename="news.css" )}}>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
+		body {
+			background-color: rgb(224, 255, 210);
+		}
+	</style>
+	<link rel="icon" href="static\images\newprogro.jpeg" type="image/x-icon">
+</head>
+
+<body>
+	<nav>
+		<div class="container nav-wrapper">
+			<div class="brand">
+				<img src="../static/images/progro1.png">
+			</div>
+
+			<ul class="nav-list">
+				<li class="active">
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="#" style="color:black">Features</a>
+					<ul class="dropdown-list">
+						<li><a href="/crop/">Crop Prediction</a></li>
+						<li><a href="/fertilizer/">Fertilizers</a></li>
+
+						<li><a href="/agrinews/">News Update</a></li>
+						<li><a href="/agrihub/">Agri-Hubs</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+
+
+	<br>
+	<center>
+		<h1 style="font-size:50px; font-family: Raleway-bold;">News Updates</h1>
+
+	</center> <br><br>
+	{% for m in news %}
+	<center>
+		<div class=" newscard"
+			style="border-style:ridge; border-radius:5px; width: 65vw; height:35vh;background-color: honeydew; box-shadow: 5px 10px 8px #888888;">
+			{% if m.thumbnail %}
+			<img src={{ m.thumbnail }}
+				style="width:150x;height:150px; float:right; padding-top:6vh; padding-right:6vw;  ">
+			{% endif %}
+			<center>
+				<h4 style="margin-top: 17px;">{{ m.title }}</h4>
+				<h4>{{ m.source }}</h4>
+				<h4>{{ m.date }}</h4><br>
+				<a href="{{ m.link }}" style="margin-right: 180px;">Read More</a>
+		</div><br><br>
+	</center>
+	</center>
+	{%endfor%}
+	</div>
+
+</body>
+
+
+</html>

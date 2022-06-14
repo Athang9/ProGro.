@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <title>Agri-hub</title>
+    <link rel="stylesheet" href={{url_for('static',filename='agrihub.css' )}}>
+    <link rel="icon" href="static\images\newprogro.jpeg" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav>
+        <div class="container1 nav-wrapper">
+            <div class="brand">
+                <img src="../static/images/progro1.png">
+            </div>
+
+            <ul class="nav-list">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+
+                <li>
+                    <a href="#" style="color:black">Features</a>
+                    <ul class="dropdown-list">
+                        <li><a href="/crop/">Crop Prediction</a></li>
+
+                        <li><a href="/fertilizer/">Fertilizers</a></li>
+                        <li><a href="/agrihub/">Agri-Hubs</a></li>
+                        <li><a href="/agrinews/">News Update</a></li>
+
+
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="map-cont"><img src="../static/images/m.png" style="justify-content: center;"
+            alt="Maharashtra District Map" title="Maharashtra District Map" usemap="#maharashtra-district-map">
+        <map id="maharashtra-district-map" name="maharashtra-district-map">
+            <area onclick="document.getElementById('id01').style.display='block'" shape="poly" alt="Ahmednagar"
+                coords="519,751,511,735,505,724,495,730,483,722,487,711,481,701,475,691,467,679,464,666,454,661,434,632,437,610,448,599,415,588,409,574,395,569,379,568,368,558,373,550,361,536,372,530,381,525,390,507,398,513,423,522,431,508,444,500,454,496,456,485,444,471,462,463,478,468,498,469,533,741,545,732,555,721,569,713,559,696,541,672,528,658,533,735,522,640,533,640,530,625,534,613,545,618,555,624,569,618,581,619,594,600,608,566,587,566,586,549,572,544,561,533,545,529,533,521,522,518,511,514,500,502"
+                href="#">
+            <area onclick="document.getElementById('id02').style.display='block'" shape="poly" alt="Akola"
+                coords="824,247,821,305,866,306,882,321,847,360,835,380,806,383,780,410,760,377,763,346,766,325,760,299,774,278,772,256,803,246"
+                href="#">
+            <area onclick="document.getElementById('id03').style.display='block'" shape="poly" alt="beed"
+                coords="566,708,542,668,515,638,531,638,533,615,551,613,564,627,569,616,583,635,583,621,602,616,594,599,609,577,605,558,634,571,659,566,659,582,672,577,697,583,716,591,719,611,730,635,742,651,750,658,764,679,749,690,739,704,725,713,641,688,612,694,597,710,578,718"
+                href="#">
+            <area onclick="document.getElementById('id04').style.display='block'" shape="poly" alt="Dhule"
+                coords="403,313,461,308,480,314,495,322,494,336,511,347,531,344,537,330,534,317,534,303,526,297,523,275,526,263,536,247,548,249,553,235,559,227,566,211,556,203,545,189,526,175,509,178,511,195,500,214,476,211,476,239,465,241,436,241,425,249,408,260,401,274,397,289"
+                href="#">
+            <area onclick="document.getElementById('id05').style.display='block'" shape="poly" alt="Jalgaon"
+                coords="525,407,539,402,553,396,555,383,570,367,583,360,592,367,603,367,608,357,623,349,641,350,648,360,658,360,669,346,670,330,677,317,683,303,691,286,703,289,713,288,722,278,706,272,694,271,691,253,689,235,677,222,639,216,603,216,578,214,562,220,555,236,536,249,525,264,531,285,537,311,539,324,528,344,517,349,512,358,515,371,515,382,522,396"
+                href="#">
+            <area onclick="document.getElementById('id06').style.display='block'" shape="poly" alt="Kolhapur"
+                coords="431,1190,442,1201,454,1195,458,1181,461,1170,465,1152,467,1138,475,1126,472,1115,456,1107,454,1096,450,1076,462,1062,472,1049,484,1063,494,1054,498,1035,481,1020,473,1005,461,1005,450,1002,437,1001,423,998,415,985,401,970,387,957,376,957,379,973,383,982,381,996,376,1005,386,1026,386,1043,390,1068,387,1079,395,1099,397,1115,395,1134,404,1145,414,1151,420,1171,415,1184,414,1193"
+                href="#">
+            <area onclick="document.getElementById('id07').style.display='block'" shape="poly" alt="Latur"
+                coords="772,826,761,816,750,801,739,804,725,801,724,791,714,791,713,769,709,746,702,738,702,729,708,715,717,713,727,699,739,702,742,691,752,696,763,691,769,676,781,669,803,669,824,685,833,702,835,715,836,730,832,746,824,758,819,771,813,779,800,772,791,780,794,798,791,818,785,826"
+                href="#">
+            <area onclick="document.getElementById('id08').style.display='block'" shape="poly" alt="Hingoli"
+                coords="814,605,808,596,803,588,789,575,800,550,796,530,788,518,780,513,771,510,764,493,764,480,778,472,799,463,813,463,830,466,839,475,850,486,852,497,860,510,864,522,861,547,860,560,853,569,838,572,832,580,830,596,824,605,819,618"
+                href="#">
+            <area onclick="document.getElementById('id09').style.display='block'" shape="poly" alt="Nagpur"
+                coords="1085,355,1066,330,1049,318,1035,308,1029,283,1011,274,999,255,985,238,968,227,990,219,990,197,1004,197,1026,210,1055,204,1051,183,1065,182,1080,177,1088,172,1096,162,1130,169,1137,187,1129,197,1126,211,1129,222,1137,231,1137,252,1129,258,1132,267,1141,271,1144,289,1137,308,1127,336,1112,344,1104,357"
+                href="#">
+            <area onclick="document.getElementById('id010').style.display='block'" shape="poly" alt="Nanded"
+                coords="869,760,860,755,858,746,857,730,843,730,843,718,837,696,827,690,815,686,815,677,805,668,801,652,815,643,815,629,826,621,830,604,830,594,837,586,841,579,847,571,863,571,863,557,868,535,866,518,874,516,883,519,890,539,902,539,899,552,916,552,924,546,935,547,948,549,954,541,959,521,949,521,930,505,918,499,926,486,938,479,951,480,960,479,968,474,977,482,982,489,982,502,977,516,980,532,980,544,970,557,963,565,963,588,954,591,943,583,934,577,924,583,919,604,911,632,922,645,921,658,913,669,905,677,905,688,897,704,893,711,880,716,872,732,874,747"
+                href="#">
+            <area onclick="document.getElementById('id011').style.display='block'" shape="poly" alt="Nashik"
+                coords="406,516,423,525,431,513,439,507,450,502,464,489,454,480,444,469,454,464,473,466,500,474,500,460,501,443,503,427,515,422,525,433,528,421,523,410,520,400,515,369,514,344,494,338,500,321,484,314,470,314,459,313,436,311,406,308,404,321,400,332,384,357,367,364,356,350,348,336,331,341,337,355,337,372,336,383,332,392,332,403,332,418,315,427,314,439,323,450,332,455,339,463,334,474,336,485,336,502,343,519,354,525,372,525,381,516,387,505,397,511"
+                href="#">
+            <area onclick="document.getElementById('id012').style.display='block'" shape="poly" alt="Palghar"
+                coords="267,580,279,560,282,547,295,549,307,529,315,518,328,514,345,500,337,485,340,461,334,453,318,444,314,433,309,449,295,449,282,446,278,425,267,421,260,432,245,435,242,452,239,469,237,489,239,505,240,516,243,543,246,554,256,575,248,566"
+                href="#">
+            <area onclick="document.getElementById('id013').style.display='block'" shape="poly" alt="Pune"
+                coords="551,812,542,815,546,804,559,790,551,771,534,776,529,763,512,763,515,743,501,729,489,727,481,726,479,716,468,691,467,682,456,668,429,633,445,599,431,594,414,585,403,574,378,569,365,575,363,594,349,599,342,616,345,632,334,641,329,661,321,686,324,694,323,715,329,732,331,751,335,763,345,772,356,776,351,788,357,799,368,801,382,801,384,791,390,783,401,782,417,787,437,793,475,792,489,796,493,805,517,813,526,819"
+                href="#">
+            <area onclick="document.getElementById('id014').style.display='block'" shape="poly" alt="Raigad"
+                coords="279,810,281,794,265,755,265,738,262,711,260,683,257,665,278,663,273,652,284,641,286,625,292,613,303,613,312,619,328,618,351,611,351,630,340,638,332,657,328,668,323,685,328,693,326,707,326,722,329,735,337,752,347,762,350,777,364,777,361,785,367,801,362,810,353,816,347,833,332,827,331,815,326,804,314,794,298,802,290,808"
+                href="#">
+            <area onclick="document.getElementById('id015').style.display='block'" shape="poly" alt="Sangali"
+                coords="498,1037,486,1012,465,1007,450,1002,437,1001,420,1001,411,991,406,976,397,966,387,951,376,949,375,940,397,955,414,963,436,960,444,954,445,932,456,913,467,913,484,918,497,918,501,901,511,905,523,899,528,882,537,896,548,898,548,910,537,923,531,934,526,948,530,955,542,946,551,940,572,948,589,944,603,938,619,934,628,959,630,973,625,982,608,982,594,984,583,987,580,1001,562,1007,553,995,542,991,531,1004,536,1023,523,1023,506,1027"
+                href="#">
+            <area onclick="document.getElementById('id016').style.display='block'" shape="poly" alt="Satara"
+                coords="409,960,398,957,392,949,381,940,364,934,364,912,372,899,373,877,362,865,351,852,350,835,359,815,368,804,379,801,389,801,393,783,414,782,433,782,442,788,462,793,475,798,495,798,503,808,500,818,490,830,501,838,511,846,522,849,525,863,522,884,511,896,505,904,500,918,483,912,470,912,459,912,444,912,447,926,445,938,444,954,429,959"
+                href="#">
+            <area onclick="document.getElementById('id017').style.display='block'" shape="poly" alt="Solapur"
+                coords="533,961,537,951,551,945,567,943,572,959,580,948,591,948,603,942,614,931,614,920,622,903,645,915,659,931,684,925,692,920,706,920,717,928,716,912,714,900,724,881,717,870,706,862,702,870,691,854,678,851,670,839,656,834,656,825,656,807,666,812,672,796,661,784,661,757,650,746,641,734,630,754,622,756,622,767,614,778,606,784,595,776,595,765,581,740,581,724,569,720,556,734,545,737,533,743,519,751,519,762,541,765,555,774,562,793,545,818,561,809,545,832,536,831,523,818,515,812,506,809,498,823,506,842,526,871,533,882,537,891,541,902,534,919,526,932"
+                href="#">
+            <area onclick="document.getElementById('id018').style.display='block'" shape="poly" alt="Thane"
+                coords="253,640,254,619,251,605,250,591,253,580,268,583,271,571,279,563,279,547,289,549,300,544,304,533,312,524,320,514,331,514,345,507,354,529,361,538,372,549,368,558,375,566,381,575,367,585,262,632,273,629,282,633,286,624,361,597,353,602,347,610,326,608,314,622"
+                href="#">
+            <area onclick="document.getElementById('id019').style.display='block'" shape="poly" alt="Wardha"
+                coords="1026,407,1041,402,1041,386,1058,385,1077,374,1091,357,1082,342,1069,330,1044,305,1029,288,1015,272,997,246,974,238,963,230,941,225,941,236,946,256,949,275,955,296,971,308,971,321,972,333,966,355,982,361,999,369,1004,385,1019,377"
+                href="#">
+            <area onclick="document.getElementById('id020').style.display='block'" shape="poly" alt="Washim"
+                coords="763,477,774,474,783,464,799,458,813,466,830,463,839,474,841,463,844,447,855,446,868,446,877,450,886,444,886,427,885,414,877,392,878,382,889,378,877,361,882,347,878,327,872,341,861,349,857,361,853,374,842,383,824,389,805,380,800,394,783,402,777,411,771,421,767,430,755,441,755,453,755,466,750,479"
+                href="#">
+            <area onclick="document.getElementById('id021').style.display='block'" shape="poly" alt="Yavatmal"
+                coords="958,525,939,514,921,510,917,491,925,475,944,474,957,475,980,475,999,486,1024,491,1058,497,1077,493,1077,477,1079,461,1071,447,1065,433,1057,422,1047,418,1038,411,1030,408,1008,382,1000,371,985,367,972,361,971,336,958,344,942,344,922,357,906,360,896,364,886,380,881,394,883,408,892,428,889,444,881,452,863,443,853,446,853,455,845,468,855,486,855,502,878,521,885,527,892,538,896,552,914,552,922,543,927,552,938,549,952,539"
+                href="#">
+            <area onclick="document.getElementById('id022').style.display='block'" shape="poly" alt="aurangabad"
+                coords="619,563,623,544,625,527,622,509,628,473,617,453,620,444,628,425,628,401,639,400,639,381,647,378,656,367,670,362,670,345,652,356,642,353,630,344,617,350,605,365,594,364,584,358,567,362,556,376,556,392,547,397,534,401,530,422,515,414,508,420,505,436,494,456,492,478,490,487,497,498,506,508,512,519,539,519,567,535,581,547,591,561"
+                href="#">
+            <area onclick="document.getElementById('id023').style.display='block'" shape="poly" alt="ratnagiri"
+                coords="320,1062,315,970,303,904,279,810,292,810,301,802,317,799,326,821,348,830,356,846,353,854,364,862,372,876,375,896,368,913,368,944,370,957,387,977,383,995,381,1010,378,1021,387,1030,387,1043,379,1051,359,1051,354,1066,337,1066"
+                href="#">
+            <area onclick="document.getElementById('id024').style.display='block'" shape="poly" alt="sindhudurg"
+                coords="411,1218,400,1204,392,1193,384,1201,361,1206,359,1177,345,1168,339,1138,337,1112,323,1090,323,1063,337,1071,347,1071,356,1066,368,1059,387,1046,390,1076,398,1098,404,1118,403,1134,393,1140,417,1157,420,1171,414,1187,423,1184,434,1192,425,1209"
+                href="#">
+            <area onclick="document.getElementById('id025').style.display='block'" shape="poly" alt="Parbhani"
+                coords="756,667,749,656,742,641,727,633,720,614,713,598,713,584,697,586,700,573,703,563,711,552,722,541,724,531,730,516,730,498,735,486,753,486,764,495,772,511,789,520,797,530,800,545,796,556,792,591,800,586,808,594,814,618,797,640,792,651,802,654,794,663,781,661,769,669"
+                href="#">
+            <area onclick="document.getElementById('id026').style.display='block'" shape="poly" alt="Jalna"
+                coords="623,563,622,552,623,533,620,524,622,510,622,491,625,471,617,444,625,438,630,421,631,405,639,402,639,386,648,380,664,364,675,349,672,361,667,382,666,407,681,396,691,405,692,419,689,432,681,443,677,455,675,469,681,483,699,485,716,479,730,477,738,488,731,504,731,519,727,538,717,550,711,560,703,575,695,586,681,583,661,582,661,563,641,568,633,571"
+                href="#">
+            <area onclick="document.getElementById('id027').style.display='block'" shape="poly" alt="amravati"
+                coords="884,357,881,344,883,321,861,306,815,308,819,246,767,252,751,224,764,214,769,203,775,180,787,178,798,166,830,160,839,152,869,164,878,188,857,189,861,206,878,219,889,214,905,216,918,216,955,202,960,186,975,185,988,178,991,200,991,214,975,220,947,225,943,238,947,247,952,266,952,280,958,296,969,313,969,327,958,341,943,346,919,358,902,361"
+                href="#">
+            <area onclick="document.getElementById('id028').style.display='block'" shape="poly" alt="bhandara"
+                coords="1191,342,1182,324,1173,316,1177,308,1188,299,1190,285,1199,281,1202,267,1196,250,1182,241,1169,239,1169,220,1179,213,1191,191,1207,181,1232,181,1237,192,1241,202,1256,213,1271,225,1284,233,1276,244,1259,256,1252,280,1252,291,1268,302,1266,314,1257,317,1238,317,1226,346,1202,336"
+                href="#">
+            <area onclick="document.getElementById('id029').style.display='block'" shape="poly" alt="gadchiroli"
+                coords="1218,690,1194,672,1179,668,1185,630,1174,616,1185,604,1188,582,1188,552,1176,541,1168,527,1168,510,1162,496,1166,480,1171,458,1179,466,1190,444,1180,435,1193,425,1190,407,1190,383,1187,342,1199,342,1223,344,1238,324,1260,319,1270,335,1259,350,1273,355,1274,400,1249,416,1248,428,1262,435,1262,471,1251,469,1257,482,1263,494,1281,514,1290,530,1306,538,1310,555,1302,571,1293,579,1277,579,1271,561,1256,579,1243,593,1234,616,1230,640,1235,655,1232,672"
+                href="#">
+            <area onclick="document.getElementById('id030').style.display='block'" shape="poly" alt="chandrapur"
+                coords="1087,549,1076,543,1057,535,1060,522,1047,521,1046,500,1060,494,1082,479,1077,460,1069,443,1062,436,1052,416,1040,416,1040,399,1044,388,1062,382,1080,378,1096,360,1108,357,1115,339,1130,339,1144,339,1163,339,1184,342,1185,357,1193,378,1188,408,1190,419,1184,428,1193,441,1191,450,1184,461,1174,455,1166,466,1166,480,1163,494,1162,505,1166,519,1154,524,1144,538,1130,538,1115,538,1099,527,1094,539"
+                href="#">
+        </map>
+
+    </div>
+
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>AHMEDNAGAR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Agrovarta soil testing lab,Ahmednagar</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Amit Prakash Deshmukh, A.nagar</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Bhausaheb Thorat Saha.Sakhar karkhana,Amrutnagar</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing laboratory,Ahm</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">District Soil Survey Soil Testing Laboratory, Ahma</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Krushi Mitra soil testing lab,savedi</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id02').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>AKOLA </h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Director of Extension Education Dr. Punjabrao Des</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dist soil survey soil testing officer, akola</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab Akola</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Krishi Vigyan Kendra Akola</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">MAHARASTRA AGRO SOLUTION,AKOLA</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Mobile Soil Testing Laboratory ,akola</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Static Soil and Water Testing Laboratory,akola</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id03" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id03').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>BID</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">adisanjivani prayogshala, Beed</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">chatrapati shahu fule anbedkar mahavidhyalay aasht</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">krushi vidnyan kendra digholanba ambajogai</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">loknete sundarravji solake sahkari sakhar karkhana</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">soil survey&amp;soil testing offcer beed</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id04" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id04').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>DHULE</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">DISTRICT SOIL SERVEY AND SOILTESTING LABORATORY ,D</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dist. Soil Survey Soil Testing Laboratory, Dhule</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">KVK DHULE</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">SOIL AND WATER TESTING LABORATORY ,DHULE</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+
+                            <td class="td-style"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id05" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id05').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>JALGAON</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">A. T. R. Laboratory Mehrun ( Jalgaon )</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil survey soil testing laboratoty,Jalga</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Dr. Ulhas patil agriculture college soil and water</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Dr.Ulhas patil Soil and Water Testing Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Natural Yours biotech soil and water testing labor</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Naturally Yours Biotech Soil &amp; Water Testing Lab.</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Sunshine Agri research and developement soil and w</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Sunshine Research and development soil water testi</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id06" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id06').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>KOLHAPUR </h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Analytical Chemist,Kolhapur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Surve &amp; Soil Testing Officer. Kolhap</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Gurudatta Sugars Ltd. Takaliwadi ,</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Jayasingpur College of Sceince</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Soil Testing Lab Jayasingpur Coolege</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Sri Datta Co-Op Suger Mill</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Sri Gurudatta Sugers Ltd</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Vanita Agro (I) Privet Ltd.,</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id07" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id07').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>LATUR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Dist. Soil Survey &amp; Soil Testing office Latur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Lab, Latur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Krushi Vigayan Kandra, Mangra</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Manjara Mobile Soil Testing Laborotary</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Tirupati Soil &amp; Water Lab, Latur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Tirupati Water and Soil Testing Lab .</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id08" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id08').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>HINGOLI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">PRERNA KRUSHI ChikstlaySoil Testing Lab HINGOLI</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Paturkar Laboratory STL Hingoli</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Vasundhara Soil and Water Testing Laboratory</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="id09" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id09').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>NAGPUR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Krishi Vigyan Kendra C.I.C.R. Panjari Nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Krishi Vigyan Kendra,C. I.C.R.Nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Nilawar Laboratory Waddhamna Nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Rashtriy Chemicals and Fertilizer Ltd Nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">SR Biocare Laboratory Waddhamana Nagpur</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Shiv Mallhar Laboratory Nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Shivmalhar Laboratories</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Universal Biotech Laboratory,nagpur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id010" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id010').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>NANDED</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Agri Polyclinic Food Farm Dhanegaon</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dist. Soil Survey &amp; Soil Testing Laboratory Nanded</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Janhit Soil &amp; Water Testing Laboratory Gokunda KIN</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">KVK Pokharni</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Shri Venkatesh Food, Water &amp; Soil Testing Lab,</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Shri Venkatesh food labrotary</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Vasundhara Mati Pani Parikshan Nanded</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Vasundhara Soil Testing Center (Firdos Bahu Udeshi</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">Yashwant Mahavidlya Soil Testing Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id011" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id011').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>NASHIK</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Analytical Chemist, Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Ashvmedh Engineers &amp; Consultant,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Ashwamedh Engineers &amp; Consultant</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Bio Organic Solution,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Bio-organic Solutions</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Dist Soil Survey Soil Testing Laboratory, Nasik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">District t Soil survey &amp; soil testing laboratory,N</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Krushi Raj Agro,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">NIRMITY EDUCATION RESEARCH AND DEVELOPMENT SOCIETY</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">10</td>
+                            <td class="td-style">Om Laboratories</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">11</td>
+                            <td class="td-style">Om Laboratory,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">12</td>
+                            <td class="td-style">Shet Jamin Mimansa ,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">13</td>
+                            <td class="td-style">TECH1 SOLUTIONS LABORATORIES</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">14</td>
+                            <td class="td-style">Tech 1 solution ,Nashik</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id012" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id012').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>PALGHAR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Lt. Vishnu Waman Charitable Trust,Palghar</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">SHETIMITRA AGRI TECH INFO AND TRAINING CENTRE</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id013" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id013').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>PUNE</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">CANBIOSYS Pvt. Ltd</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Laboratory, Pune</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Inter People Seva Trust</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Mitcon Consultancy &amp; Engineering Services Limited</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Modern Analytical Laboratory</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">SLA.STL,College of Agriculture (MPKV) Pune-5</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Shreeji Aqua Treatment Pvt. Ltd</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Suryoday Laboratories,Pune.</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">VASANTDADA SUGAR INSTITUTE STL Pune</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">10</td>
+                            <td class="td-style">mitcon consultancy and engineering services ltd pu</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id014" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id014').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>RAIGAD</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Mahatma Phule Arts Science and Commmerce College P</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Rayat Shikshan Sansth's Mahatama Phule Art's, Comm</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">D.S S.S.T.L,Raigad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">District soil surey &amp; soil testing lab,Alibag</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id015" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id015').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>SANGALI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District soil Survey and stl,Sangli</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Ecocare Lab and Cosultancy Sangli</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Hi-Tech Lab Sangali</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Kasturi Agrotech Laboratory,Sangli</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Krushi Padvidhar Audugik Sahakari sangh ,Islampu</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">National Agro Clinic Centre ,Kupwad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Sushilanand Agro Polyclinic ,Islampur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id016" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id016').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>SATARA</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Ajinkayatara co.sugar fact.,Shahunagar</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Ajinkayatara co.sugar fact.Shendre,Satara</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Sevey Soil Testing Laboratory Satara</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">District soil Survey and soil Testing laboratory,s</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Krishimitra Soil Testing MiniLab Mhasave Satara</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Krushimitra mati parikshan prayogahala MinLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">R.D.Khandagale Krishi Tantra Niketan Minilab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Samarth Krushiseva MiniLab Konandave Tal Dist Sata</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">Samarth krushi seva minilab AtPost Kondave Satara</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">10</td>
+                            <td class="td-style">Shaurya mati parikshan prayogashala MiniLab Kor</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">11</td>
+                            <td class="td-style">Yami Mati Pariskkhan Kendre Mini Lab Aundh</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id017" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id017').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>SOLAPUR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil survey soil testing laboratory Solap</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">LokMangal Biotech laboratory,Solapur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Lokmangal Water &amp; Soil testing Laboratory, At. Po</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Sidhdeshwar Cooprerative Sugar Factory Ltd</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id018" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id018').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>THANE</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Laboratory</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Laboratory, Th</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Rashtriya Chemicals &amp; Fertilizers Ltd., Chembur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id019" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id019').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>WARDHA </h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Laboratory Wa</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Laboratory, Ward</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Multinutrient Soil Testing Laboratory</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id020" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id020').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>WASHIM</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Dist Soil survey and soil testing officer, washim</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dist Soil survey and soil testing officer, washim1</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab. Washim</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id021" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id021').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>YAVATMAL</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">AGRICULTURE TESTING LABORATORY YAVATMAL</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Agriculture Testing Lab,Yavmatl</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Agriculture Office Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">District Soil Testing &amp; Soil Survy Office Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Janhit Bahuuddesiya Sanstha MIniLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">Jiwan Vikas Bahudeshiy MiniLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">KVK Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Krishimitra Krishi BHU S Seva Snt Ltd Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">Krushi Mitra Krushi Bahu ,Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">10</td>
+                            <td class="td-style">Krushi Vidnyan Keandr ,Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">11</td>
+                            <td class="td-style">Krushi Vikas Mati Parikshan Kendra MIniLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">12</td>
+                            <td class="td-style">MSTL, Van KVK, Yavatmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">13</td>
+                            <td class="td-style">Manju Rahul Chachane MiniLab Yeotmal</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">14</td>
+                            <td class="td-style">Nari Eakta Bahuuddesiya Vikas Sansthan MinLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                            <td class="td-style"> </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">15</td>
+                            <td class="td-style">Pandharkwada Sahakari Kharedi Vikri Samiti MiniLab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id022" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id022').style.display='none'"
+                    class="w3-button w3-display-topright">X</span>
+                <h2>AURANGABAD </h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Analytical Chemist,Aurangabad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dhaneshwari Manav Vikas Mandals Soil Testing Lab</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Dilasa Soil and Water Testing Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Dist Soil Survey Soil Testing lab Aurangabad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab, Aurangabad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">KVK,soil and water testing laboratory,Aurangabad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">MIT Mobile Soil and Water Testing Lab, Aurang,b.t</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">MIT Soil and Water Testing Lab, Aurangabad</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="id023" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id023').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>RATNAGIRI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Lab. Ratnagiri</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab Ratnagiri</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Shraddha Parshuram Analytical Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Shradha Parshram Analytical Laboratory Ratnagiri</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div id="id024" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id024').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>SINDHUDURG</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab ,Sindhudurg</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Mobile STL of College of Agriculture, Sangulwadi</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Mobile Soil Testing Lab ,Vaibhavwadi</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div id="id025" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id025').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>PARBHANI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Central Instrumentation cell,VNMKV Parbhani</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Central Instrumentation cell,VNMKV Parbhani, HOD</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">Central Instrumentation cell,VNMKV Parbhani,HOD,s</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Dist Soil Survey Soil Testing Laboratory, Parbhani</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">District Soil Survay &amp; Soil Testing Office Parbhan</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">District Soil Survay &amp; Soil Testing Office,Himarad</td>
+                            <td class="td-style">Mini Lab </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">Krishi Vigyan Kendra Parbhani</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Kurshi Vednya. Kendre Parbhani</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="id026" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id026').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>JALNA</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">A TO Z AGRO SOLUTIONS</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">Dist Soil Survey Soil Testing Laboratory, Jalana</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Officer, Jalna</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">Manav Vikas Mission Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">Soil Health Clinik Lab (Bhumi Arogya Chikitsalay),</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id027" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id027').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>AMARAVATI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Analytical Chemist,Amaravati</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab., Krushi</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Survey Soil Testing Leboratory Amt.</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">4</td>
+                            <td class="td-style">J.K. Marketing Soil, Water &amp; Leaf Testing Lab. Amr</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style">
+                        </tr>
+                        <tr>
+                            <td class="td-style">5</td>
+                            <td class="td-style">KVK Ghatkhed (Bodna)</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">6</td>
+                            <td class="td-style">P-Square Agritech Soil And Water Testing Lab Amrav</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">7</td>
+                            <td class="td-style">P-Square Agritech, Soil and Water Testing Lab</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">8</td>
+                            <td class="td-style">Parikshit Biotech Amravati</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">9</td>
+                            <td class="td-style">Parikshit Biotech, Amravati,</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">10</td>
+                            <td class="td-style">SOil &amp; Water Testing Labo KVK Durgapur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">11</td>
+                            <td class="td-style">Soil, Water Testing Lab. KVK, Ghatkhed</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id028" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id028').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>BHANDARA</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey &amp; Soil Testing Laboratory Bh</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Bhandara</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id029" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id029').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>GADCHIROLI</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab. Gadchiroli</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                            <td class="td-style"></td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey and Soil Testing Lab. Gadchir</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="id030" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id030').style.display='none'"
+                    class="w3-button w3-display-topright">×</span>
+                <h2>CHANDRAPUR</h2>
+            </header>
+            <div class="w3-container">
+                <table class="table structure-table">
+                    <thead>
+                        <tr>
+                            <th class="head-style">Serial No</th>
+                            <th class="head-style">Lab Name </th>
+                            <th class="head-style">Lab Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-style">1</td>
+                            <td class="td-style">Deenee Chemicals PVT LTD</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">2</td>
+                            <td class="td-style">District Soil Survey Soil Testing Lab,chandrapur</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                        <tr>
+                            <td class="td-style">3</td>
+                            <td class="td-style">District Soil Survey and Soil Testing Lab. Chandra</td>
+                            <td class="td-style">Soil Testing Laboratories </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+</body>
+
+</html>
